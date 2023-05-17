@@ -6,13 +6,11 @@ include("model.jl")
 
 df = DataFrame(CSV.File("./data/real_scenario.csv"))
 
-
-# CSV.write("data.csv", df)
 day = Int(24*(60/15))
 
 
 
-for epsilon in [0.5]
+for epsilon in [0.25, 0.5, 0.7, 0.9,0.98]
     for decay_rate  in [0.25, 0.5, 0.7, 0.9,0.98]
         for learning_rate in [0.98, 0.9, 0.7, 0.5, 0.25]
             for forget_factor in [0.25, 0.5, 0.7, 0.9,0.98]
@@ -30,7 +28,7 @@ for epsilon in [0.5]
                                     j = Int(rand(1:364))
                                     i = (j-1)*day + 1
                                 
-                                    run_episode(df[i:(i + day),:], "./results/ESANN/julia/repisodes2/", models, encoders, tuple_size, forget_factor, epsilon, learning_rate, decay_rate, index)
+                                    run_episode(df[i:(i + day),:], "./results/ESANN/julia/", models, encoders, tuple_size, forget_factor, epsilon, learning_rate, decay_rate, index)
                                 end
                             end
                         end
