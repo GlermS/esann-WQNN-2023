@@ -1,0 +1,22 @@
+{
+    "CReW":{
+        "period": ["2022-01-01 00:00", "2023-12-31 23:55"],
+        "search":{"epsilon":[0.9, 0.95,0.98]},
+        "params":{
+            "learning_rate": [0.98],
+            "decay_rate": [0.75, 0.9],
+            "tuple_size": [250, 500],
+            "mean_type": ["SimpleMean"]
+        }
+    },
+    "ReW-pywisard":{
+        "period": ["2022-01-01 00:00", "2023-12-31 23:55"],
+        "search":{"epsilon":[0.9, 0.95,0.98]},
+        "params":{
+            "learning_rate": [0.98],
+            "decay_rate": [0.75, 0.9],
+            "tuple_size": [50],
+            "forget_factor": [0.75, 0.98]
+        }
+    }
+}
