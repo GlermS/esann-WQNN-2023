@@ -16,7 +16,7 @@ for epsilon in [0.25, 0.5, 0.7, 0.9,0.98]
             for forget_factor in [0.25, 0.5, 0.7, 0.9,0.98]
                 for tuple_size in [10, 20, 40, 80, 160, 320, 720]
                     try
-                        if ~isfile("./results/ESANN/julia/repisodes2/epsilon=$(epsilon)_learning-rate=$(learning_rate)_decay-rate=$(decay_rate)_forget-factor=$(forget_factor)_tuple-size=$(tuple_size)/checkpoint_2500.csv")
+                        if ~isfile("./results/ESANN/julia/epsilon=$(epsilon)_learning-rate=$(learning_rate)_decay-rate=$(decay_rate)_forget-factor=$(forget_factor)_tuple-size=$(tuple_size)/checkpoint_2500.csv")
 
                             models = [generate_Model(1320, tuple_size, forget_factor) for i in 1:5]
 
